@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    depends_on:
+      - database
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/app
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - 8080:8080
