@@ -6,7 +6,7 @@ COPY Pipfile.lock /app
 
 RUN pip install --upgrade pip
 RUN pip install pipenv
-RUN pip install --system --deploy
+RUN pipenv install --system --deploy
 
 COPY ./src /app
 

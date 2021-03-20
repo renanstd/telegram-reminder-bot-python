@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  app:
+  bot:
     build: .
     depends_on:
       - database
@@ -10,12 +10,14 @@ services:
       - "5000:5000"
     volumes:
       - ./src:/app
+    env_file: .env
 
   database:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: reminders
 
   adminer:
     image: adminer
