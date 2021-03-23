@@ -28,8 +28,9 @@ if ENVIRONMENT == 'dev':
     updater.idle()
 else:
     updater.start_webhook(
-        listen='0.0.0.0',
-        port=80,
+        listen="0.0.0.0",
+        port=PORT,
         url_path=BOT_TOKEN,
     )
-    updater.bot.set_webhook(HEROKU_URL + BOT_TOKEN)
+    # updater.bot.set_webhook(HEROKU_URL + BOT_TOKEN)
+    updater.idle()
