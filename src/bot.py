@@ -29,7 +29,7 @@ if ENVIRONMENT == 'dev':
 else:
     updater.start_webhook(
         listen='0.0.0.0',
-        port=PORT,
+        port=80,
         url_path=BOT_TOKEN,
     )
     updater.bot.set_webhook(HEROKU_URL + BOT_TOKEN)
