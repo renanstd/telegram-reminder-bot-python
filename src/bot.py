@@ -1,23 +1,26 @@
-from telegram import Update
-from telegram.ext import Updater, MessageHandler, CommandHandler, Filters, CallbackContext
+from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from database import init_database
 from settings import ENVIRONMENT, BOT_TOKEN, PORT, HEROKU_URL
+from bot_handlers.commands import remind_me_in_10, remind_me_in_30
+from bot_handlers.messages import handle_message
 
 
 init_database()
 updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher =updater.dispatcher
 
-
-def handle_message(update: Update, context: CallbackContext) -> None:
-    chat_id = update.effective_chat.id
-    message = update.message.text
-    context.bot.send_message(chat_id=chat_id, text=message)
-
-
-message_handler = MessageHandler(Filters.text, handle_message)
-
-dispatcher.add_handler(message_handler)
+dispatcher.add_handler(MessageHandler(
+    Filters.text & ~Filters.command,
+    handle_message
+))
+dispatcher.add_handler(CommandHandler(
+    "10m",
+    remind_me_in_10
+))
+dispatcher.add_handler(CommandHandler(
+    "30m",
+    remind_me_in_30
+))
 
 
 if ENVIRONMENT == 'dev':
