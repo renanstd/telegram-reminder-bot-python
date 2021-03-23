@@ -27,6 +27,8 @@ if ENVIRONMENT == 'dev':
     updater.start_polling()
     updater.idle()
 else:
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    print(PORT)
     updater.start_webhook(
         listen='0.0.0.0',
         port=PORT,
