@@ -31,6 +31,6 @@ else:
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
+        webhook_url=HEROKU_URL + BOT_TOKEN
     )
-    # updater.bot.set_webhook(HEROKU_URL + BOT_TOKEN)
     updater.idle()
