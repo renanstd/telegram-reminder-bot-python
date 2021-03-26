@@ -6,8 +6,6 @@ services:
     build: .
     depends_on:
       - database
-    ports:
-      - "5000:5000"
     volumes:
       - ./src:/app
     env_file: .env
