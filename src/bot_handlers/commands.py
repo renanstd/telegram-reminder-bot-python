@@ -38,3 +38,15 @@ def remind_me_in_1_hour(update: Update, _: CallbackContext) -> None:
     )
     message = "Ok, te chamo de volta daqui 1 hora."
     update.message.reply_text(message)
+
+
+def remind_me_in_1_day(update: Update, _: CallbackContext) -> None:
+    chat_id = update.effective_chat.id
+    reminder_time = datetime.datetime.now() + datetime.timedelta(days=1)
+    Reminder.create(
+        datetime=reminder_time,
+        reminder='1 dia já se passou!',
+        chat_id=chat_id,
+    )
+    message = "Ok, te chamo de volta daqui 1 dia."
+    update.message.reply_text(message)

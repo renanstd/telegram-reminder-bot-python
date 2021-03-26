@@ -4,7 +4,8 @@ from settings import ENVIRONMENT, BOT_TOKEN, PORT, HEROKU_URL
 from bot_handlers.commands import (
     remind_me_in_10_minutes,
     remind_me_in_30_minutes,
-    remind_me_in_1_hour
+    remind_me_in_1_hour,
+    remind_me_in_1_day
 )
 from bot_handlers.messages import handle_message
 
@@ -28,6 +29,10 @@ dispatcher.add_handler(CommandHandler(
 dispatcher.add_handler(CommandHandler(
     "1h",
     remind_me_in_1_hour
+))
+dispatcher.add_handler(CommandHandler(
+    "1d",
+    remind_me_in_1_day
 ))
 
 
