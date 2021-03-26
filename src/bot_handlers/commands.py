@@ -6,8 +6,9 @@ from models import Reminder
 
 def remind_me_in_10(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
+    reminder_time = datetime.datetime.now() + datetime.timedelta(minutes=10)
     Reminder.create(
-        datetime=datetime.datetime.now(),  # TODO: Alterar aqui
+        datetime=reminder_time,
         reminder='10 minutos já se passaram!',
         chat_id=chat_id,
     )
@@ -17,8 +18,9 @@ def remind_me_in_10(update: Update, _: CallbackContext) -> None:
 
 def remind_me_in_30(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
+    reminder_time = datetime.datetime.now() + datetime.timedelta(minutes=30)
     Reminder.create(
-        datetime=datetime.datetime.now(),  # TODO: Alterar aqui
+        datetime=reminder_time,
         reminder='30 minutos já se passaram!',
         chat_id=chat_id,
     )
