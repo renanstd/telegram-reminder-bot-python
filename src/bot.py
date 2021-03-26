@@ -19,11 +19,11 @@ dispatcher.add_handler(MessageHandler(
 ))
 dispatcher.add_handler(CommandHandler(
     "10m",
-    remind_me_in_10
+    remind_me_in_10_minutes
 ))
 dispatcher.add_handler(CommandHandler(
     "30m",
-    remind_me_in_30
+    remind_me_in_30_minutes
 ))
 dispatcher.add_handler(CommandHandler(
     "1h",
