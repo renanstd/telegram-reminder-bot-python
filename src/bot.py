@@ -1,7 +1,11 @@
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from database import init_database
 from settings import ENVIRONMENT, BOT_TOKEN, PORT, HEROKU_URL
-from bot_handlers.commands import remind_me_in_10, remind_me_in_30
+from bot_handlers.commands import (
+    remind_me_in_10_minutes,
+    remind_me_in_30_minutes,
+    remind_me_in_1_hour
+)
 from bot_handlers.messages import handle_message
 
 
@@ -20,6 +24,10 @@ dispatcher.add_handler(CommandHandler(
 dispatcher.add_handler(CommandHandler(
     "30m",
     remind_me_in_30
+))
+dispatcher.add_handler(CommandHandler(
+    "1h",
+    remind_me_in_1_hour
 ))
 
 
