@@ -25,13 +25,13 @@ def handle_message(update: Update, _: CallbackContext) -> None:
     reminder = regex_reminder.findall(message)
 
     if date_today:
-        today = datetime.date.today(TIMEZONE)
+        today = datetime.datetime.now(TIMEZONE)
         datetime_obj = datetime.datetime.strptime(
             today.strftime('%d/%m/%Y') + hour[0],
             '%d/%m/%Y%H:%M'
         )
     elif date_tomorrow:
-        today = datetime.date.today(TIMEZONE)
+        today = datetime.datetime.now(TIMEZONE)
         tomorrow = today + datetime.timedelta(days=1)
         datetime_obj = datetime.datetime.strptime(
             tomorrow.strftime('%d/%m/%Y') + hour[0],
