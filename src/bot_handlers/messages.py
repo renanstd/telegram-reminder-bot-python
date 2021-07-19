@@ -5,6 +5,9 @@ from telegram.ext import CallbackContext
 from models import Reminder
 
 
+TIMEZONE = datetime.timezone(datetime.timedelta(hours=-3))
+
+
 def handle_message(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
     message = update.message.text
@@ -22,13 +25,13 @@ def handle_message(update: Update, _: CallbackContext) -> None:
     reminder = regex_reminder.findall(message)
 
     if date_today:
-        today = datetime.date.today()
+        today = datetime.date.today(TIMEZONE)
         datetime_obj = datetime.datetime.strptime(
             today.strftime('%d/%m/%Y') + hour[0],
             '%d/%m/%Y%H:%M'
         )
     elif date_tomorrow:
-        today = datetime.date.today()
+        today = datetime.date.today(TIMEZONE)
         tomorrow = today + datetime.timedelta(days=1)
         datetime_obj = datetime.datetime.strptime(
             tomorrow.strftime('%d/%m/%Y') + hour[0],
