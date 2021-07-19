@@ -4,9 +4,12 @@ import datetime
 from models import Reminder
 
 
+TIMEZONE = datetime.timezone(datetime.timedelta(hours=-3))
+
+
 def remind_me_in_10_minutes(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
-    reminder_time = datetime.datetime.now() + datetime.timedelta(minutes=10)
+    reminder_time = datetime.datetime.now(TIMEZONE) + datetime.timedelta(minutes=10)
     Reminder.create(
         datetime=reminder_time,
         reminder='10 minutos já se passaram!',
@@ -18,7 +21,7 @@ def remind_me_in_10_minutes(update: Update, _: CallbackContext) -> None:
 
 def remind_me_in_30_minutes(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
-    reminder_time = datetime.datetime.now() + datetime.timedelta(minutes=30)
+    reminder_time = datetime.datetime.now(TIMEZONE) + datetime.timedelta(minutes=30)
     Reminder.create(
         datetime=reminder_time,
         reminder='30 minutos já se passaram!',
@@ -30,7 +33,7 @@ def remind_me_in_30_minutes(update: Update, _: CallbackContext) -> None:
 
 def remind_me_in_1_hour(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
-    reminder_time = datetime.datetime.now() + datetime.timedelta(hours=1)
+    reminder_time = datetime.datetime.now(TIMEZONE) + datetime.timedelta(hours=1)
     Reminder.create(
         datetime=reminder_time,
         reminder='1 hora já se passou!',
@@ -42,7 +45,7 @@ def remind_me_in_1_hour(update: Update, _: CallbackContext) -> None:
 
 def remind_me_in_1_day(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
-    reminder_time = datetime.datetime.now() + datetime.timedelta(days=1)
+    reminder_time = datetime.datetime.now(TIMEZONE) + datetime.timedelta(days=1)
     Reminder.create(
         datetime=reminder_time,
         reminder='1 dia já se passou!',
