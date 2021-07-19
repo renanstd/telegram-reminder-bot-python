@@ -45,7 +45,7 @@ def handle_message(update: Update, _: CallbackContext) -> None:
 
     Reminder.create(
         datetime=datetime_obj,
-        reminder=reminder,
+        reminder=reminder[0],
         chat_id=chat_id
     )
 
