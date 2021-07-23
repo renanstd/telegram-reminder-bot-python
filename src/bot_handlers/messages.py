@@ -5,7 +5,7 @@ from telegram.ext import CallbackContext
 from models import Reminder
 
 
-TIMEZONE = datetime.timezone(datetime.timedelta(hours=-3))
+TIMEZONE = datetime.timezone(datetime.timedelta(hours=+3))
 
 
 def handle_message(update: Update, _: CallbackContext) -> None:
@@ -40,7 +40,8 @@ def handle_message(update: Update, _: CallbackContext) -> None:
     else:
         datetime_obj = datetime.datetime.strptime(
             date[0] + hour[0],
-            '%d/%m/%Y%H:%M'
+            '%d/%m/%Y%H:%M',
+            timezone=TIMEZONE
         )
 
     Reminder.create(
