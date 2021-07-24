@@ -5,16 +5,13 @@ from telegram import Bot
 from settings import BOT_TOKEN
 
 
-TIMEZONE = datetime.timezone(datetime.timedelta(hours=-3))
-
-
 # Inicializa db e bot
 init_database()
 bot = Bot(token=BOT_TOKEN)
 
 # Busca lembretes que deverão ser enviados
 reminders = Reminder.select().where(
-    Reminder.datetime <= datetime.datetime.now(TIMEZONE),
+    Reminder.datetime <= datetime.datetime.now(),
     Reminder.done == False
 )
 
