@@ -40,8 +40,11 @@ def handle_message(update: Update, _: CallbackContext) -> None:
             '%d/%m/%Y%H:%M'
         )
 
+    # Altera horario para formato UTC
+    utc_datetime = datetime_obj + datetime.timedelta(hours=3)
+
     Reminder.create(
-        datetime=datetime_obj,
+        datetime=utc_datetime,
         reminder=reminder[0],
         chat_id=chat_id
     )
