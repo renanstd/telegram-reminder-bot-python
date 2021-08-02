@@ -4,9 +4,6 @@ import datetime
 from models import Reminder
 
 
-# TIMEZONE = datetime.timezone(datetime.timedelta(hours=-3))
-
-
 def formatted_time(time):
     return time.strftime("%H:%M")
 
