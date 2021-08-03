@@ -10,7 +10,7 @@ def formatted_time(time):
 
 def welcome(update: Update, _: CallbackContext) -> None:
     welcome_message = (
-        "Seja bem vindo(a) ao Reminder Bot!\n"
+        "Seja bem vindo(a) ao Reminder Bot!\n\n"
         "Para lembretes rápidos, como 'Me chame em 10 min', utilize os "
         "commands.\n\n"
         "Para lembretes mais elaborados, digite o que deseja que eu te "
