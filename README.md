@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=flat&logo=python&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white)
 
-Meu bot de lembretes do telegram.
+Meu bot de lembretes do telegram. Você pode utilizá-lo clicando [aqui](https://t.me/doc_reminder_bot).
 
 ## Features
 
