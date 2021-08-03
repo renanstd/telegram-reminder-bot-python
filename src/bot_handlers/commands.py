@@ -12,10 +12,10 @@ def welcome(update: Update, _: CallbackContext) -> None:
     welcome_message = (
         "Seja bem vindo(a) ao Reminder Bot!\n"
         "Para lembretes rápidos, como 'Me chame em 10 min', utilize os "
-        "`commands`.\n"
+        "commands.\n\n"
         "Para lembretes mais elaborados, digite o que deseja que eu te "
         "lembre, informando a data e hora nos formatos DD/MM/YYYY e HH:MM "
-        "respectivamente.\nEu também consigo reconhecer palavras chave "
+        "respectivamente.\n\nEu também consigo reconhecer palavras chave "
         "como 'hoje' e 'amanhã'.\nExemplos:\n\n"
         "- 'Beber água, amanhã as 08:00'\n"
         "- 'Estudar, hoje as 19:00'\n"
