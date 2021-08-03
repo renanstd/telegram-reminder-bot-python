@@ -8,6 +8,21 @@ def formatted_time(time):
     return time.strftime("%H:%M")
 
 
+def welcome(update: Update, _: CallbackContext) -> None:
+    welcome_message = (
+        "Seja bem vindo(a) ao Reminder Bot!\n"
+        "Para lembretes rápidos, como 'Me chame em 10 min', utilize os "
+        "`commands`.\n"
+        "Para lembretes mais elaborados, digite o que deseja que eu te "
+        "lembre, informando a data e hora nos formatos DD/MM/YYYY e HH:MM "
+        "respectivamente.\nEu também consigo reconhecer palavras chave "
+        "como 'hoje' e 'amanhã'.\nExemplos:\n\n"
+        "- 'Beber água, amanhã as 08:00'\n"
+        "- 'Estudar, hoje as 19:00'\n"
+        "- 'Agendar vacina, dia 22/08/2021 08:00"
+    )
+    update.message.reply_text(welcome_message)
+
 def remind_me_in_10_minutes(update: Update, _: CallbackContext) -> None:
     chat_id = update.effective_chat.id
     reminder_time = datetime.datetime.now() + datetime.timedelta(minutes=10)
