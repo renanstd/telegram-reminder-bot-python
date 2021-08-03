@@ -8,7 +8,7 @@ Meu bot de lembretes do telegram.
 
 ## Features
 
-- Lembretes rápidos de `10min`, `30min`, `1h` e `1d`
+- Lembretes rápidos de `10min`, `30min`, `1h` e `1d` através dos **commands**
 - Lembretes personalizados, criados a partir de uma mensagem enviada para o bot
   - Termos como `hoje` e `amanhã` são reconhecidos
 
