@@ -15,7 +15,9 @@ init_database()
 updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
-dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
+dispatcher.add_handler(
+    MessageHandler(Filters.text & ~Filters.command, handle_message)
+)
 dispatcher.add_handler(CommandHandler("start", welcome))
 dispatcher.add_handler(CommandHandler("10m", remind_me_in_10_minutes))
 dispatcher.add_handler(CommandHandler("30m", remind_me_in_30_minutes))

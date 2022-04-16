@@ -33,11 +33,17 @@ def handle_message(update: Update, _: CallbackContext) -> None:
             tomorrow.strftime("%d/%m/%Y") + hour[0], "%d/%m/%Y%H:%M"
         )
     else:
-        datetime_obj = datetime.datetime.strptime(date[0] + hour[0], "%d/%m/%Y%H:%M")
+        datetime_obj = datetime.datetime.strptime(
+            date[0] + hour[0], "%d/%m/%Y%H:%M"
+        )
 
-    Reminder.create(datetime=datetime_obj, reminder=reminder[0], chat_id=chat_id)
+    Reminder.create(
+        datetime=datetime_obj, reminder=reminder[0], chat_id=chat_id
+    )
 
     answer = "Ok, te lembrarei de {}, no dia {} as {}.".format(
-        reminder[0], datetime_obj.strftime("%d/%m/%Y"), datetime_obj.strftime("%H:%M")
+        reminder[0],
+        datetime_obj.strftime("%d/%m/%Y"),
+        datetime_obj.strftime("%H:%M"),
     )
     update.message.reply_text(answer)
