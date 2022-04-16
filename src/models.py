@@ -9,6 +9,7 @@ class Reminder(peewee.Model):
     """
     Model que armazenará os lembretes cadastrados pelos usuários.
     """
+
     id = peewee.UUIDField(primary_key=True, default=uuid.uuid4)
     chat_id = peewee.CharField(max_length=255)
     datetime = peewee.DateTimeField()

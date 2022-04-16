@@ -11,8 +11,7 @@ bot = Bot(token=BOT_TOKEN)
 
 # Busca lembretes que deverão ser enviados
 reminders = Reminder.select().where(
-    Reminder.datetime <= datetime.datetime.now(),
-    Reminder.done == False
+    Reminder.datetime <= datetime.datetime.now(), Reminder.done == False
 )
 
 # Envia as mensagens via telegram
