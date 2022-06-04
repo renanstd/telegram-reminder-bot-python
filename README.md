@@ -5,7 +5,8 @@
 [![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white)](https://www.heroku.com)
 
 
-Meu bot de lembretes do telegram. Você pode utilizá-lo clicando [aqui](https://t.me/doc_reminder_bot).
+Meu bot de lembretes do telegram. Você pode utilizá-lo clicando 
+[aqui](https://t.me/doc_reminder_bot).
 
 ## Features
 
