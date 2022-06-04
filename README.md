@@ -5,7 +5,7 @@
 [![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=flat&logo=heroku&logoColor=white)](https://www.heroku.com)
 [![Lint Markdown](https://github.com/renanstn/telegram-reminder-bot-python/actions/workflows/markdown-lint.yaml/badge.svg)](https://github.com/renanstn/telegram-reminder-bot-python/actions/workflows/markdown-lint.yaml)
 
-Meu bot de lembretes do telegram. Você pode utilizá-lo clicando 
+Meu bot de lembretes do telegram. Você pode utilizá-lo clicando
 [aqui](https://t.me/doc_reminder_bot).
 
 ## Features
