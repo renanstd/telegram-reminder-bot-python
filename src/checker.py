@@ -2,6 +2,7 @@ import datetime
 from database import init_database
 from models import Reminder
 from telegram import Bot
+from telegram.error import Unauthorized
 from settings import BOT_TOKEN
 
 
@@ -16,6 +17,10 @@ reminders = Reminder.select().where(
 
 # Envia as mensagens via telegram
 for reminder in reminders:
-    bot.send_message(reminder.chat_id, reminder.reminder)
-    reminder.done = True
-    reminder.save()
+    try:
+        bot.send_message(reminder.chat_id, reminder.reminder)
+        reminder.done = True
+        reminder.save()
+    except Unauthorized:
+        # Caso um usuário bloqueie o bot, uma exception é lançada
+        pass
