@@ -23,4 +23,4 @@ for reminder in reminders:
         reminder.save()
     except Unauthorized:
         # Caso um usuário bloqueie o bot, uma exception é lançada
-        pass
+        continue
