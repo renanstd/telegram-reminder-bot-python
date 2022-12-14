@@ -1,13 +1,17 @@
-FROM python:3.9
-
+FROM python:3.9 AS base
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+RUN pip install --upgrade pip && \
+    pip install pipenv
 WORKDIR /app
-COPY Pipfile /app
-COPY Pipfile.lock /app
+COPY Pipfile Pipfile.lock /app/
 
-RUN pip install --upgrade pip
-RUN pip install pipenv
-RUN pipenv install --system --deploy
-
+FROM base AS development
+RUN pipenv install --dev --system --deploy
 COPY ./src /app
+CMD ["python", "bot.py"]
 
+FROM base AS production
+RUN pipenv install --system --deploy
+COPY ./src /app
 CMD ["python", "bot.py"]

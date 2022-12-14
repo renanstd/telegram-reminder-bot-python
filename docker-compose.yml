@@ -2,7 +2,9 @@ services:
 
   bot:
     container_name: bot
-    build: .
+    build:
+      context: .
+      target: development
     depends_on:
       - database
     volumes:
