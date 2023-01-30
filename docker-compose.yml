@@ -5,6 +5,7 @@ services:
     build:
       context: .
       target: development
+    restart: always
     depends_on:
       - db
     volumes:
@@ -23,7 +24,6 @@ services:
 
   adminer:
     image: adminer
-    restart: always
     depends_on:
       - db
     ports:
