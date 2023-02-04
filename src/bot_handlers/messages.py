@@ -41,7 +41,7 @@ def handle_message(update: Update, _: CallbackContext) -> None:
         datetime=datetime_obj, reminder=reminder[0], chat_id=chat_id
     )
 
-    answer = "Ok, te lembrarei de {}, no dia {} as {}.".format(
+    answer = "Ok, te lembrarei de {}, no dia {} às {}.".format(
         reminder[0],
         datetime_obj.strftime("%d/%m/%Y"),
         datetime_obj.strftime("%H:%M"),
