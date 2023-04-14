@@ -33,6 +33,6 @@ else:
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
-        webhook_url=APP_URL + BOT_TOKEN,
+        webhook_url=f"{APP_URL}/{BOT_TOKEN}",
     )
     updater.idle()
