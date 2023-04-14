@@ -1,6 +1,6 @@
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from database import init_database
-from settings import ENVIRONMENT, BOT_TOKEN, PORT, HEROKU_URL
+from settings import ENVIRONMENT, BOT_TOKEN, PORT, APP_URL
 from bot_handlers.commands import (
     welcome,
     remind_me_in_10_minutes,
@@ -33,6 +33,6 @@ else:
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
-        webhook_url=HEROKU_URL + BOT_TOKEN,
+        webhook_url=APP_URL + BOT_TOKEN,
     )
     updater.idle()

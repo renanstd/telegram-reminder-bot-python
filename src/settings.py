@@ -7,4 +7,4 @@ DATABASE_URL = config(
 BOT_TOKEN = config("BOT_TOKEN")
 ENVIRONMENT = config("ENVIRONMENT", default="prod")
 PORT = config("PORT", default="8443", cast=int)
-HEROKU_URL = config("HEROKU_URL", default="")
+APP_URL = config("APP_URL", default="")
