@@ -15,3 +15,8 @@ FROM base AS production
 RUN pipenv install --system --deploy
 COPY ./src /app
 CMD ["python", "bot.py"]
+
+FROM base as checker
+RUN pipenv install --system --deploy
+COPY ./src /app
+CMD ["python", "checker.py"]

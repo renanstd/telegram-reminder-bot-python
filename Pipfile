@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 peewee = "*"
-python-telegram-bot = "*"
+python-telegram-bot = "==13.12"
 python-decouple = "*"
 psycopg2 = "*"
+schedule = "*"
 
 [dev-packages]
 black = "*"
