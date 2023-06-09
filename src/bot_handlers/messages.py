@@ -43,6 +43,9 @@ def handle_message(update: Update, _: CallbackContext) -> None:
             date[0] + hour[0], "%d/%m/%Y%H:%M"
         )
 
+    # Add timezone info
+    datetime_obj = TIMEZONE.localize(datetime_obj)
+
     Reminder.create(
         datetime=datetime_obj, reminder=reminder[0], chat_id=chat_id
     )
