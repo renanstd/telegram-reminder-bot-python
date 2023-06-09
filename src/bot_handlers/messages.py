@@ -1,8 +1,14 @@
 import re
 import datetime
+import pytz
+
 from telegram import Update
 from telegram.ext import CallbackContext
+
 from models import Reminder
+
+
+TIMEZONE = pytz.timezone("America/Sao_Paulo")
 
 
 def handle_message(update: Update, _: CallbackContext) -> None:
@@ -22,12 +28,12 @@ def handle_message(update: Update, _: CallbackContext) -> None:
     reminder = regex_reminder.findall(message)
 
     if date_today:
-        today = datetime.datetime.now()
+        today = datetime.datetime.now(TIMEZONE)
         datetime_obj = datetime.datetime.strptime(
             today.strftime("%d/%m/%Y") + hour[0], "%d/%m/%Y%H:%M"
         )
     elif date_tomorrow:
-        today = datetime.datetime.now()
+        today = datetime.datetime.now(TIMEZONE)
         tomorrow = today + datetime.timedelta(days=1)
         datetime_obj = datetime.datetime.strptime(
             tomorrow.strftime("%d/%m/%Y") + hour[0], "%d/%m/%Y%H:%M"
