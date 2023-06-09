@@ -1,5 +1,6 @@
 import datetime
 import time
+import pytz
 
 import schedule
 from telegram import Bot
@@ -10,6 +11,9 @@ from models import Reminder
 from settings import BOT_TOKEN
 
 
+TIMEZONE = pytz.timezone("America/Sao_Paulo")
+
+
 def check_reminders():
     # Inicializa db e bot
     init_database()
@@ -17,7 +21,8 @@ def check_reminders():
 
     # Busca lembretes que deverão ser enviados
     reminders = Reminder.select().where(
-        Reminder.datetime <= datetime.datetime.now(), Reminder.done == False
+        Reminder.datetime <= datetime.datetime.now(TIMEZONE),
+        Reminder.done == False,
     )
 
     # Envia as mensagens via telegram
