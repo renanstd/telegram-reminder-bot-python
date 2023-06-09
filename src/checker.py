@@ -30,6 +30,7 @@ def check_reminders():
             # Caso um usuário bloqueie o bot, uma exception é lançada
             continue
 
+
 schedule.every(5).minutes.do(check_reminders)
 
 while True:
