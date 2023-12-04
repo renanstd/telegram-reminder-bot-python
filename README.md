@@ -14,6 +14,7 @@ Meu bot de lembretes do telegram. Você pode utilizá-lo clicando
 - Lembretes personalizados, criados a partir de uma mensagem enviada para o bot
 contendo uma data e uma hora válida
   - Termos como `hoje` e `amanhã` são reconhecidos
+
 Exemplo:
 ```
 Fazer o dever de casa, amanhã às 20:00.
