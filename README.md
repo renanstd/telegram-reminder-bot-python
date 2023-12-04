@@ -15,6 +15,11 @@ Meu bot de lembretes do telegram. Você pode utilizá-lo clicando
 contendo uma data e uma hora válida
   - Termos como `hoje` e `amanhã` são reconhecidos
 
+Exemplo:
+```
+Fazer o dever de casa, amanhã às 20:00.
+```
+
 ## Screenshots
 
 <img src="images/screenshot.jpg" height="700"/>
