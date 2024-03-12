@@ -1,4 +1,5 @@
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
+
 from database import init_database
 from settings import ENVIRONMENT, BOT_TOKEN, PORT, APP_URL
 from bot_handlers.commands import (
